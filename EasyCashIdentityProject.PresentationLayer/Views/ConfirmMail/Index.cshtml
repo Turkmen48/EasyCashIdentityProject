@@ -1,0 +1,44 @@
+﻿@model ConfirmMailViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Doğrulama</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            width: 400px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h4 class="text-center mb-4">Email Doğrulama</h4>
+        <form method="post">
+            <div class="form-group">
+                <label>Mail Adresiniz:</label>
+                <input type="text" class="form-control" asp-for="Email"
+                value="@ViewBag.v" readonly />
+                <label for="verificationCode">Mail adresine gönderilen kodu girin:</label>
+                <input type="text" class="form-control" asp-for="ConfirmCode" placeholder="Doğrulama Kodu">
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary btn-block">Doğrula</button>
+        </form>
+    </div>
+</body>
+</html>
